@@ -1,132 +1,60 @@
 #include <stdio.h>
-#define n 4
-// КОМИСАРАЙТИС ДАРЬЯ 4 АДМО
 
-//Вверху первая программа через диагонали
-//Внизу есть вторая программа!(через switch)
-int main(int argc, char *argv[])
-{
-    int a[n][n];
-    int x;//cтолбцы
-    int y;//строки
-    int znach=1;
-    flag = 0;
-    for (int d=0;d<n;d++) {// d - диагональ
-        if (d%2==0)
-        {
-            x=0;
-            y=d;
-            while (y>=0)
-            {
-                a[x][y]=znach;
-                znach++;
-                x=x+1; y=y-1;
-            }
-        }
-        else
-        {
-            x=d;
-            y=0;
-            if (flag = 1)
-            {
-                a[x][y]=znach;
-                znach++;
-                x=x-1; y=y+1;
-            }
-        }
-    }
-    for (int d=1;d<n;d++) {
-        if (d%!2==0)
-        {
-            x=d;
-            y=n-1;
-            if (flag = 1)
-            {
-                a[x][y]=znach;
-                znach++;
-                x=x+1; y=y-1;
-            }
-        }
-        else
-        {
-            x=n-1;
-            y=d;
-            while (y<=n-1)
-            {
-                a[x][y]=znach;
-                znach++;
-                x=x-1; y=y+1;
-            }
-        }
-    }
-    for (int i = 0;i<n;i++)
-    {
-        for (int j = 0;j<n;j++)
-        {
-        printf("%d  ",a[i][j]);
-        }
-            printf("\n");
-    }
+#define N 6
 
-    return 0;
+int main() {
+	enum states { down, right, leftDown, rightUp } state;
+	int a[N][N] = { 0 };
+
+	int x = 0;
+	int y = 0;
+	state = down;
+
+	for (int i = 1; i <= N * N; ++i) {
+		a[y][x] = i;
+		switch (state) {
+		case down:
+			++y;
+			if (x == 0) {
+				state = rightUp;
+			}
+			else {
+				state = leftDown;
+			}
+			break;
+
+		case right:
+			++x;
+			if (y == 0) {
+				state = leftDown;
+			}
+			else {
+				state = rightUp;
+			}
+			break;
+
+		case leftDown:
+			x--;
+			y++;
+			if (x == 0) state = down;
+			if (y == N - 1) state = right;
+			break;
+
+		case rightUp:
+			x++;
+			y--;
+			if (y == 0) state = right;
+			if (x == N - 1) state = down;
+			break;
+		}
+
+	}
+
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < N; ++j) {
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
 }
-
-
-  /*  num states {Down, RightUp, Right, LeftDown} state;
-    int x = 0; // x столбцы
-    int y = N-1; // y строки
-    int a[N][N] = {0};
-    state = Down;
-    a[x][y]= 100;
-    for (int i = 100; i <= N*N;++i)
-        a[x][y]=i;
-        switch (state);
-        {
-        case Down:
-            --y;
-            if (x == N - 1)
-            {
-                state = LeftDown;
-            }
-            else
-            {
-                state = RightUp;
-            }
-            break;
-        case Right:
-            ++x;
-            if (y == 0)
-            {
-                state =  LeftDown;
-            }
-            else
-            {
-                state = RightUp;
-            }
-            break;
-        case RightUp:
-            x++;
-            y++;
-            if(x == N - 1)
-                state = Right;
-            if (y == 0)
-                state = Down;
-            break;
-        case LeftDown:
-            x--;
-            y--;
-            if(x == 0)
-                state = Right;
-            if(y == N - 1)
-                state = Down;
-            break;
-        }
-
-        for (int i = 0;i<N;++i)
-        {
-            for (int j = 0;j<N;++j)
-            {
-                printf("%d  ",a[i][j]);
-            }
-            printf("\n");
-      */
