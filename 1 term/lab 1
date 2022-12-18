@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+#define N 6
+
+int main() {
+	enum states { down, right, leftDown, rightUp } state;
+	int a[N][N] = { 0 };
+
+	int x = 0;
+	int y = 0;
+	state = down;
+
+	for (int i = 1; i <= N * N; ++i) {
+		a[y][x] = i;
+		switch (state) {
+		case down:
+			++y;
+			if (x == 0) {
+				state = rightUp;
+			}
+			else {
+				state = leftDown;
+			}
+			break;
+
+		case right:
+			++x;
+			if (y == 0) {
+				state = leftDown;
+			}
+			else {
+				state = rightUp;
+			}
+			break;
+
+		case leftDown:
+			x--;
+			y++;
+			if (x == 0) state = down;
+			if (y == N - 1) state = right;
+			break;
+
+		case rightUp:
+			x++;
+			y--;
+			if (y == 0) state = right;
+			if (x == N - 1) state = down;
+			break;
+		}
+
+	}
+
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < N; ++j) {
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
