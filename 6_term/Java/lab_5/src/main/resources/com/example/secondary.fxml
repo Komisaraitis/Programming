@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.SecondaryController"
+      spacing="15"
+      style="-fx-background-color: #ffe6f0; -fx-padding: 20;">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <Text text="Мои заметки"
+          style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #c71585;" />
+
+    <ListView fx:id="notesListView"
+              prefHeight="200"
+              style="-fx-background-color: white; -fx-border-color: #ffb6c1; -fx-border-width: 1;"/>
+
+    <HBox spacing="20">
+        <VBox spacing="10">
+            <Label text="Новая заметка" style="-fx-text-fill: #c71585;"/>
+            <TextField fx:id="noteTitleField" promptText="Заголовок"
+                       style="-fx-background-color: white; -fx-border-color: #ffc0cb;"/>
+            <TextArea fx:id="noteContentArea" promptText="Содержание" wrapText="true"
+                      style="-fx-background-color: white; -fx-border-color: #ffc0cb;" />
+            <Button text="Добавить"
+                    onAction="#addNote"
+                    style="-fx-background-color: #ffb6c1; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="Удалить выбранную"
+                onAction="#deleteNote"
+                style="-fx-background-color: #dc143c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        </VBox>
+    </HBox>
+
+    <Button text="Назад к задачам"
+            onAction="#switchToPrimary"
+            style="-fx-background-color: #ff69b4; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+</VBox>

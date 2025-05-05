@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.PrimaryController"
+      spacing="15"
+      style="-fx-background-color: #ffe6f0; -fx-padding: 20;">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <Text text="Мои задачи"
+          style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #c71585;" />
+
+    <TableView fx:id="taskTable"
+               prefHeight="200"
+               style="-fx-background-color: white; -fx-border-color: #ffb6c1; -fx-border-width: 1;">
+        <columns>
+            <TableColumn fx:id="titleColumn" text="Название"/>
+            <TableColumn fx:id="dueDateColumn" text="Срок выполнения"/>
+            <TableColumn fx:id="descriptionColumn" text="Описание"/>
+            <TableColumn fx:id="priorityColumn" text="Приоритет"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20">
+        <VBox spacing="10">
+            <Label text="Новая задача" style="-fx-text-fill: #c71585;"/>
+            <TextField fx:id="taskTitleField" promptText="Название задачи"
+                       style="-fx-background-color: white; -fx-border-color: #ffc0cb;"/>
+            <TextArea fx:id="taskDescriptionArea" promptText="Описание" wrapText="true"
+                      style="-fx-background-color: white; -fx-border-color: #ffc0cb;" />
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Срок выполнения" style="-fx-text-fill: #c71585;"/>
+            <DatePicker fx:id="dueDatePicker" style="-fx-border-color: #ffc0cb;"/>
+            <Label text="Приоритет" style="-fx-text-fill: #c71585;"/>
+            <ComboBox fx:id="priorityComboBox" style="-fx-border-color: #ffc0cb;"/>
+            <Button text="Добавить"
+                    onAction="#addTask"
+                    style="-fx-background-color: #ffb6c1; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="Удалить выбранную"
+                    onAction="#deleteTask"
+                    style="-fx-background-color: #dc143c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Показать заметки"
+            onAction="#switchToSecondary"
+            style="-fx-background-color: #ff69b4; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+</VBox>
