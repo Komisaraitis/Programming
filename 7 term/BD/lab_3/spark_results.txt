@@ -1,0 +1,16 @@
+Number of anime in adventure genre with rating > 8.0: 126
+
+TOP-10 adventure anime:
+----------------------------------------------------------------------
+Rank Title                                    Rating
+----------------------------------------------------------------------
+1    Fullmetal Alchemist: Brotherhood         9.25  
+2    Hunter x Hunter (2011)                   9.11  
+3    Sen to Chihiro no Kamikakushi            8.92  
+4    Made in Abyss                            8.91  
+5    Mushishi Zoku Shou 2nd Season            8.83  
+6    Cowboy Bebop                             8.81  
+7    Mononoke Hime                            8.80  
+8    Mushishi Zoku Shou                       8.77  
+9    Tengen Toppa Gurren Lagann               8.74  
+10   Mushishi                                 8.74  

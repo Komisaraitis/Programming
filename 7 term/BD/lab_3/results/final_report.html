@@ -1,0 +1,69 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Anime Analysis - Final Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 40px; }
+                .header { background: #2c3e50; color: white; padding: 20px; border-radius: 10px; }
+                .section { margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+                .hadoop { border-left: 5px solid #e74c3c; }
+                .spark { border-left: 5px solid #3498db; }
+                pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; }
+                .timestamp { color: #7f8c8d; font-size: 0.9em; }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>Adventure Genre Anime Analysis</h1>
+                <p class="timestamp">Report generated: 2025-11-29 12:19:02.600373</p>
+            </div>
+            
+            <div class="section hadoop">
+                <h2>Hadoop MapReduce Results</h2>
+                <pre>Hadoop MapReduce Results:
+==================================================
+Number of adventure anime with rating > 8.0: 126	
+	
+TOP-10 adventure anime with highest ratings:	
+Rank Title                                    Rating	
+--------------------------------------------------	
+1    Fullmetal Alchemist: Brotherhood    9.25  	
+2    Hunter x Hunter (2011)              9.11  	
+3    Sen to Chihiro no Kamikakushi       8.92  	
+4    Made in Abyss                       8.91  	
+5    Mushishi Zoku Shou 2nd Season       8.83  	
+6    Cowboy Bebop                        8.81  	
+7    Mononoke Hime                       8.80  	
+8    Mushishi Zoku Shou                  8.77  	
+9    Tengen Toppa Gurren Lagann          8.74  	
+10   Mushishi                            8.74  	
+</pre>
+            </div>
+            
+            <div class="section spark">
+                <h2>Apache Spark Results</h2>
+                <pre>Apache Spark Results:
+==================================================
+Number of anime in adventure genre with rating > 8.0: 126
+
+TOP-10 adventure anime:
+----------------------------------------------------------------------
+Rank Title                                    Rating
+----------------------------------------------------------------------
+1    Fullmetal Alchemist: Brotherhood         9.25  
+2    Hunter x Hunter (2011)                   9.11  
+3    Sen to Chihiro no Kamikakushi            8.92  
+4    Made in Abyss                            8.91  
+5    Mushishi Zoku Shou 2nd Season            8.83  
+6    Cowboy Bebop                             8.81  
+7    Mononoke Hime                            8.80  
+8    Mushishi Zoku Shou                       8.77  
+9    Tengen Toppa Gurren Lagann               8.74  
+10   Mushishi                                 8.74  
+</pre>
+            </div>
+        </body>
+        </html>
+        
