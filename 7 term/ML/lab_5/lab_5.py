@@ -54,7 +54,7 @@ model = keras.Sequential(
 model.compile(
     optimizer=keras.optimizers.Adam(learning_rate=0.002),
     loss="sparse_categorical_crossentropy",
-    metrics=["accuracy"],
+    metrics=["sparse_categorical_accuracy"],
 )
 
 model.summary()
@@ -113,3 +113,4 @@ print(generated[:500])
 output_path = "C:\\Users\\Бобр Даша\\Desktop\\university\\4 КУРС\\7 семестр\\МО\\lab_5\\abracadabra.txt"
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(generated)
+
