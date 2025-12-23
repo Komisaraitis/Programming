@@ -108,9 +108,10 @@ generated = generate_abracadabra(
     model, seed_text=seed_text, num_chars=500, temperature=temperature
 )
 
-print(generated[:500])
+print(generated)
 
 output_path = "C:\\Users\\Бобр Даша\\Desktop\\university\\4 КУРС\\7 семестр\\МО\\lab_5\\abracadabra.txt"
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(generated)
+
 
