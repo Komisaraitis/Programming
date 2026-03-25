@@ -1,3 +1,6 @@
+
+#-------ДОБАВИЛА МЕТРИКИ И МЕХАНИЗМ ВНИМАНИЯ-------------
+
 import re, json, random, numpy as np, tensorflow as tf, os
 from tensorflow.keras.models import Model, load_model
 from tensorflow.keras.layers import Embedding, LSTM, Dense, Input, Dropout, Layer
